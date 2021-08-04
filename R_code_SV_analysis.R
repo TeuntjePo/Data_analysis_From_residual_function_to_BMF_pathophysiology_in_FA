@@ -394,13 +394,13 @@ df_transcribed$type <- factor(df_transcribed$type, levels = c("Non-transcribed",
 
 # Plot SVs located in transcribed genes
 plot_percentage_SV_transcribed <- ggplot(data=df_transcribed, aes(x=sample, y = percentage)) + geom_bar(aes(fill=type), position = 'fill', stat = "identity") +
-  theme_minimal() +
-  ggtitle("Percentage of SVs in transcribed region") +
-  ylab("Percentage") +
-  labs(fill = "Transcription status") +
-  theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1)) +
-  scale_fill_manual(values=c("firebrick2", "cyan3")) +
-  scale_y_continuous(breaks = c(0.00, 0.25, 0.50, 0.75, 1.00), labels = c("0", "25", "50", "75", "100")) +
-  scale_x_discrete(limits=c("AHH1-G2", "2B3-3E5", "2B3-20F3-24A7 + APH", " ","HAP1_FANCC_27-1", "HAP1_FANCC_27-3", "HAP1_FANCC_27-4", "HAP1_FANCC_27-5", 
-                            "HAP1_FANCC_27-6", "HAP1_FANCC_27-8", "HAP1_FANCC_27-11"))
+                                  theme_minimal() +
+                                  ggtitle("Percentage of SVs in transcribed region") +
+                                  ylab("Percentage") +
+                                  labs(fill = "Transcription status") +
+                                  theme(plot.title = element_text(hjust = 0.5), axis.title.x = element_blank(), axis.text.x = element_text(angle = 45, hjust = 1)) +
+                                  scale_fill_manual(values=c("firebrick2", "cyan3")) +
+                                  scale_y_continuous(breaks = c(0.00, 0.25, 0.50, 0.75, 1.00), labels = c("0", "25", "50", "75", "100")) +
+                                  scale_x_discrete(limits=c("AHH1-G2", "2B3-3E5", "2B3-20F3-24A7 + APH", " ","HAP1_FANCC_27-1", "HAP1_FANCC_27-3", "HAP1_FANCC_27-4", "HAP1_FANCC_27-5", 
+                                                            "HAP1_FANCC_27-6", "HAP1_FANCC_27-8", "HAP1_FANCC_27-11"))
 
