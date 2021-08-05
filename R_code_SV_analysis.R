@@ -14,7 +14,7 @@ library(tidyr)
 ref_genome <- "BSgenome.Hsapiens.UCSC.hg19"
 
 ## Loading own data
-input_data <- "/Users/teuntjepoortvliet/surfdrive/Shared/vanBoxtelLab (Groupfolder)/Projects/Teuntje/AHH1_APH_WGS/SV_validation/SVs_24A7_APH_3E5.csv" 
+input_data <- "X/SVs_24A7_APH_3E5.csv" 
 data_frame_own <- read.csv(input_data, header = TRUE, sep = ';', fill = TRUE)
 
 ### SV analysis own data
@@ -121,7 +121,7 @@ plot_number_in_gene <- ggplot(data=gene_df, aes(x=clone)) + geom_bar(aes(fill=In
 ### SV analysis comparison with Zou et al. (2018) data
 
 ## Loading data Zou et al. and preparing dataframe with Zou et al. and own data
-input_file <- "~/Surfdrive/Shared/vanBoxtelLab (Groupfolder)/Projects/Sjors/Fanconi/Data/Zou2018/hg19/denovo_rgs.txt"
+input_file <- "X/denovo_rgs.txt"
 raw_data_zou <- read.delim(file = input_file, stringsAsFactors = F)
 
 df_wanted_rows_zou <- raw_data_zou[grep("*FANCC*", raw_data_zou$knockout),]
@@ -181,7 +181,7 @@ plot_number_SVs_in_samples_both <- ggplot(data=df_number_events_day_both, aes(x=
 ### Analysis SVs of Zou et al. (2018) located in genes and SVs located in transcribed regions both
 
 ## Loading data gene expression (data comes from Encode: https://www.encodeproject.org/experiments/ENCSR820PHH/)
-input_data_gene_expression_GM12878 <- "/Users/teuntjepoortvliet/surfdrive/Shared/vanBoxtelLab (Groupfolder)/Projects/Teuntje/AHH1_APH_WGS/SV_validation/Gene_expression/ENCFF873VWU.tsv"
+input_data_gene_expression_GM12878 <- "X/ENCFF873VWU.tsv"
 data_gene_expression <- read.delim(input_data_gene_expression_GM12878, 
                                    header = TRUE, sep = "", dec = ".", stringsAsFactors = F) 
 data_expression <- data_gene_expression[650:59429,]
@@ -214,13 +214,13 @@ vector_ensembl_IDs_3E5 <- c('ENSG00000157766',
                             'ENSG00000170325',	
                             'ENSG00000177084')
 
-file_APH <- "/Users/teuntjepoortvliet/surfdrive/Shared/vanBoxtelLab (Groupfolder)/Projects/Teuntje/AHH1_APH_WGS/SV_validation/Gene_expression/mart_export_APH.txt"
+file_APH <- "X/mart_export_APH.txt"
 df_names_id_genes_APH <- read.delim(file_APH, header = TRUE, sep = "", stringsAsFactors = F)
 
-file_3E5 <- "/Users/teuntjepoortvliet/surfdrive/Shared/vanBoxtelLab (Groupfolder)/Projects/Teuntje/AHH1_APH_WGS/SV_validation/Gene_expression/mart_export_3E5.txt"
+file_3E5 <- "X/mart_export_3E5.txt"
 df_names_id_genes_3E5 <- read.delim(file_3E5, header = TRUE, sep = "", stringsAsFactors = F)
 
-file_Zou <- "/Users/teuntjepoortvliet/surfdrive/Shared/vanBoxtelLab (Groupfolder)/Projects/Teuntje/AHH1_APH_WGS/SV_validation/Gene_expression/mart_export_Zou.txt"
+file_Zou <- "X/mart_export_Zou.txt"
 df_names_id_genes_Zou <- read.delim(file_Zou, header = TRUE, sep = "", stringsAsFactors = F)
 vector_ensembl_IDs_Zou <- df_names_id_genes_Zou$gene_id
 
@@ -249,7 +249,7 @@ ranked_data_expression_6 <- mutate(data_expression_6, ranked = dense_rank(data_e
 expression_data_Zou <- left_join(ranked_data_expression_6, df_names_id_genes_Zou)
 
 ## Loading SV data Zou et al.(2018) 
-input_file <- "~/Surfdrive/Shared/vanBoxtelLab (Groupfolder)/Projects/Sjors/Fanconi/Data/Zou2018/hg19/denovo_rgs.txt"
+input_file <- "X/denovo_rgs.txt"
 raw_data_zou <- read.delim(file = input_file, stringsAsFactors = F)
 FANCC_Zou <- raw_data_zou[raw_data_zou$knockout == "FANCC",]
 fdz <- FANCC_Zou
