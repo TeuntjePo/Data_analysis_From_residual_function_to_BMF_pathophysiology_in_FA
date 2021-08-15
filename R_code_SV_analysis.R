@@ -17,7 +17,7 @@ ref_genome <- "BSgenome.Hsapiens.UCSC.hg19"
 input_data <- "X/SVs_24A7_APH_3E5.csv" 
 data_frame_own <- read.csv(input_data, header = TRUE, sep = ';', fill = TRUE)
 
-### SV analysis own data
+### SV analysis own data (AHH1-G2 = FANCC WT, 2B3-3E5 = FANCC KO & 2B3-20F3-24A7 + APH = FANCC KO + APH)
 
 ## Number of events per sample in total
 Number_events_2B3_20F3_24A7_APH <- sum(data_frame_own$clone == "2B3-20F3-24A7 + APH")
@@ -258,7 +258,7 @@ fdz <- FANCC_Zou
 zou_granges1 <- GRanges(seqnames = fdz$chr1, ranges = IRanges(start = fdz$start1, end = fdz$end1))
 
 ## Load gene locations
-genes <- read.table("~/Downloads/gencode.v19.annotation.prot.gene.bed", header = F, sep = "\t")
+genes <- read.table("X/X/gencode.v19.annotation.prot.gene.bed", header = F, sep = "\t")
 colnames(genes) <- c("chr", "start", "end", "strand", "type", "gene", "annotation")
 genes_granges <- GRanges(seqnames = gsub("chr", "", genes$chr), ranges = IRanges(start = genes$start, end = genes$end))
 genome(zou_granges1) = genome(genes_granges) = 'hg19'
