@@ -1,2 +1,2 @@
-# FA_BMF_SNV_and_indel_analysis
-R code for single nucleotide variant and indel analysis for FANCC WT, FANCC KO and APH-treated FANCC KO accompanying _Learning from mistakes: From residual function to pathophysiology of bone marrow failure of Fanconi anaemia_
+# FA_BMF_data_analysis
+R code for data analysis of the sequencing data from the FANCC WT (AHH1-G2), FANCC KO (2B3-3E5) and APH-treated FANCC KO (2B3-20F3-24A7 + APH) clones accompanying the report _Learning from mistakes: From residual function to pathophysiology of bone marrow failure of Fanconi anaemia_
