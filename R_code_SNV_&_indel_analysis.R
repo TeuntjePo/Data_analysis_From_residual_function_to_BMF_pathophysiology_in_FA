@@ -10,7 +10,7 @@ install.packages('dplyr')
 install.packages('reshape2')
 install.packages('ggalluvial')
 install.packages("gridExtra")
-devtools::load_all('/Users/teuntjepoortvliet/Documents/MutationalPatterns')
+devtools::load_all('/X/X/X/MutationalPatterns')
 
 ## Installing and loading the reference genome
 if (!requireNamespace("BiocManager", quietly = TRUE))
@@ -27,7 +27,7 @@ library(ggplot2)
 library(gridExtra)
 library(tidyr)
 
-## Loading VCF files 
+## Loading VCF files (AHH1-G2 = FANCC WT, 2B3-3E5 = FANCC K0 & 2B3-20F3-24A7 + APH = FANCC KO + APH)
 input_folder <- "X/AHH1_WT_&_FANCC_KO/"
 
 vcf_files <- list.files(input_folder, pattern = ".vcf", full.names = TRUE)
